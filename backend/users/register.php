@@ -44,13 +44,13 @@ function insertUser($conn, $data) {
         $username = $conn->real_escape_string($data['username']);
         $email = $conn->real_escape_string($data['email']);
         $password = password_hash($data['password'], PASSWORD_DEFAULT);
-        $role = $conn->real_escape_string($data['role']);
+
 
         $sql = "INSERT INTO users (id, full_name, username, email, password, role,is_archived) 
-                VALUES ('$uuid', '$full_name', '$username', '$email', '$password', '$role',0)";
+                VALUES ('$uuid', '$full_name', '$username', '$email', '$password', 'applicant',0)";
 
         if ($conn->query($sql)) {
-            return ['success' => true, 'message' => 'User added successfully', 'id' => $uuid];
+            return ['success' => true, 'message' => 'Register successfully', 'id' => $uuid];
         } else {
             return ['success' => false, 'message' => 'Error: ' . $conn->error];
         }
@@ -58,7 +58,7 @@ function insertUser($conn, $data) {
 
      $input = json_decode(file_get_contents('php://input'), true);
 
-    $required_fields = ['full_name', 'username', 'email', 'password', 'role'];
+    $required_fields = ['full_name', 'username', 'email', 'password', ];
     foreach ($required_fields as $field) {
         if (empty($input[$field])) {
             echo json_encode(['success' => false, 'message' => ucfirst($field) . ' is required']);
