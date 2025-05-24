@@ -8,30 +8,11 @@
 </head>
 <body>
   <div class="container">
-    <aside class="sidebar">
-  <div class="logo">
-    <h2>DENR CENRO<br>  
-    <div class="admin-dropdown">
-      <button class="dropdown-toggle">Admin ▾</button>
-      <div class="dropdown-content">
-        <a href="profile.html">My Profile</a>
-        <a href="login.html">Log Out</a>
-      </div>
-    </div></h2>
-  </div>
+   <?php
+      $activePage = 'dashboard'; 
+      include('includes/sidebar.php');
+    ?>
 
-  <nav class="sidebar-nav">
-    <ul>
-      <li><a href="#" class="active">Dashboard</a></li>
-      <li><a href="users.html">Users</a></li>
-      <li><a href="permits.html">Permits</a></li>
-      <li><a href="applications.html">Applications</a></li>
-      <li><a href="rejected.html">Rejected</a></li>
-      <li><a href="archived.html">Archived</a></li>
-      <li><a href="reports.html">Reports</a></li>
-    </ul>
-  </nav>
-</aside>
 
 
     <main class="dashboard">
