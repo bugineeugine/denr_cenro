@@ -1,0 +1,28 @@
+@import url('admin-dashboard.css');
+
+.dashboard-header {
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color:#2e7d32;
+}
+
+.analytics-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1.5rem;
+}
+
+.chart-card {
+  background-color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}

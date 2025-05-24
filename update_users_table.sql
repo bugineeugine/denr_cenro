@@ -1,0 +1,4 @@
+-- Modify users table to use UUID
+ALTER TABLE users MODIFY COLUMN id VARCHAR(36) NOT NULL;
+ALTER TABLE users DROP PRIMARY KEY;
+ALTER TABLE users ADD PRIMARY KEY (id); 

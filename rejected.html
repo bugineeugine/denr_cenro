@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rejected Permits - Permit Verification System</title>
+  <link rel="stylesheet" href="css/rejected.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+  <div class="logo">
+    <h2>DENR CENRO<br>  
+    <div class="admin-dropdown">
+      <button class="dropdown-toggle">Admin ▾</button>
+      <div class="dropdown-content">
+        <a href="profile.html">My Profile</a>
+        <a href="login.html">Log Out</a>
+      </div>
+    </div></h2>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="admin-dashboard.html">Dashboard</a></li>
+      <li><a href="users.html">Users</a></li>
+      <li><a href="permits.html">Permits</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="#" class="active">Rejected</a></li>
+      <li><a href="archived.html">Archived</a></li>
+      <li><a href="reports.html">Reports</a></li>
+    </ul>
+  </nav>
+</aside>
+
+    <main class="dashboard">
+      <div class="dashboard-header">
+        <div class="logo-title">
+          <h1>REJECTED APPLICATIONS</h1>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="actions">
+          <input type="text" placeholder="Search rejected entries..." class="search-bar">
+        </div>
+
+        <table class="rejected-table">
+          <thead>
+            <tr>
+              <th>Application ID</th>
+              <th>Applicant Name</th>
+              <th>Type</th>
+              <th>Reason</th>
+              <th>Date Rejected</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>APP-030</td>
+              <td>Carlos Mendoza</td>
+              <td>Transport</td>
+              <td>Incomplete documents</td>
+              <td>2025-05-08</td>
+            </tr>
+            <!-- Additional rows -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

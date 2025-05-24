@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - Permit Verification System</title>
+  <link rel="stylesheet" href="css/admin-dashboard.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+  <div class="logo">
+    <h2>DENR CENRO<br>  
+    <div class="admin-dropdown">
+      <button class="dropdown-toggle">Admin ▾</button>
+      <div class="dropdown-content">
+        <a href="profile.html">My Profile</a>
+        <a href="login.html">Log Out</a>
+      </div>
+    </div></h2>
+  </div>
+
+  <nav class="sidebar-nav">
+    <ul>
+      <li><a href="#" class="active">Dashboard</a></li>
+      <li><a href="users.html">Users</a></li>
+      <li><a href="permits.html">Permits</a></li>
+      <li><a href="applications.html">Applications</a></li>
+      <li><a href="rejected.html">Rejected</a></li>
+      <li><a href="archived.html">Archived</a></li>
+      <li><a href="reports.html">Reports</a></li>
+    </ul>
+  </nav>
+</aside>
+
+
+    <main class="dashboard">
+        <div class="dashboard-header">
+            <div class="logo-title">
+              <h1>DASHBOARD</h1>  
+
+      <div class="stats">
+        <a  href="permits.html">
+        <div class="card">
+          <h3>Verified Permits</h3>
+          <p>326</p>
+          
+
+          </a>
+        </div>
+        <div class="card">
+          <a  href="applications.html">
+          <h3>Pending Applications</h3>
+          <p>48</p>
+          </a>
+        </div>
+        <div class="card">
+          <a  href="rejected.html">
+          <h3>Rejected Permits</h3>
+          <p>12</p>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="chart-box">
+        <h2>Monthly Permit Activity</h2>
+        <canvas id="permitChart" width="600" height="300"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('permitChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        datasets: [{
+          label: 'Permits Processed',
+          data: [12, 19, 15, 22, 18, 24],
+          backgroundColor: '#388e3c'
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: true }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

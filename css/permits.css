@@ -1,0 +1,83 @@
+/* Import shared styles */
+@import url('admin-dashboard.css');
+
+.dashboard-header {
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.logo-title h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color:#2e7d32;
+}
+
+/* Content */
+.content {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  padding: 0.5rem 1rem;
+  width: 250px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.add-btn {
+  background-color: #2e7d32;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Table */
+.permits-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.permits-table th,
+.permits-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.permits-table th {
+  background-color: #2e7d32;
+  color: white;
+}
+
+.view-btn {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.view-btn:hover {
+  background-color: #2e7d32;
+}

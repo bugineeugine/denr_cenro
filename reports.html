@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reports - Permit Verification System</title>
+  <link rel="stylesheet" href="css/reports.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        <h2>DENR CENRO<br>  
+        <div class="admin-dropdown">
+          <button class="dropdown-toggle">Admin ▾</button>
+          <div class="dropdown-content">
+            <a href="profile.html">My Profile</a>
+            <a href="login.html">Log Out</a>
+          </div>
+        </div></h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <ul>
+          <li><a href="admin-dashboard.html">Dashboard</a></li>
+          <li><a href="users.html">Users</a></li>
+          <li><a href="permits.html">Permits</a></li>
+          <li><a href="applications.html">Applications</a></li>
+          <li><a href="rejected.html">Rejected</a></li>
+          <li><a href="archived.html">Archived</a></li>
+          <li><a href="#" class="active">Reports</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="dashboard">
+      <div class="dashboard-header">
+        <div class="logo-title">
+          <h1>REPORTS - Violations</h1>
+        </div>
+      </div>
+
+      <section class="content">
+        <div class="actions">
+          <input type="text" placeholder="Search applications..." class="search-bar">
+        </div>
+
+        
+        <table class="reports-table">
+          <thead>
+            <tr>
+              <th>User ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Violation</th>
+              <th>Date Reported</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="reportData">
+            <!-- Data loads here -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      function loadReports() {
+        $.getJSON('get_violations.php', function(data) {
+          let rows = '';
+          data.forEach(report => {
+            rows += `
+              <tr>
+                <td>${report.user_id}</td>
+                <td>${report.name}</td>
+                <td>${report.email}</td>
+                <td>${report.violation}</td>
+                <td>${report.date_reported}</td>
+                <td><button class="view-btn">View</button></td>
+              </tr>
+            `;
+          });
+          $('#reportData').html(rows);
+        });
+      }
+
+      loadReports();
+    });
+  </script>
+</body>
+</html>
