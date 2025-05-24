@@ -17,6 +17,17 @@ function deleteUser($conn, $id) {
         return ['success' => false, 'message' => 'Error checking permits: ' . $conn->error];
     }
 
+    $checkAppSql = "SELECT COUNT(*) as cnt FROM applications WHERE application_id = '$id' ";
+    $appResult = $conn->query($checkAppSql);
+    if ($appResult) {
+        $appRow = $appResult->fetch_assoc();
+        if ($appRow['cnt'] > 0) {
+            return ['success' => false, 'message' => 'Cannot delete user: User is linked to an application.'];
+        }
+    } else {
+        return ['success' => false, 'message' => 'Error checking applications: ' . $conn->error];
+    }
+
     // If no permits found, delete user
     $sql = "DELETE FROM users WHERE id = '$id'";
     if ($conn->query($sql)) {
